@@ -28,7 +28,7 @@ public class Lugar {
 
     private String lugar;
     
-    @OneToOne
+    @OneToOne(optional = true)
     @JoinColumn(name = "idlugarsuperior", referencedColumnName = "idlugar")  // Relaciona con la misma tabla
     private Lugar idLugarSuperior;
 }

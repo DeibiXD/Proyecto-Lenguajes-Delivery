@@ -25,13 +25,16 @@ public class Empresa {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idempresa")
     private int idEmpresa;
+
     private String empresa;
+
     private String RTN;
+
     @Column(name = "costoenvio")
     private double costoEnvio;
 
     @OneToOne
-    @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
+    @JoinColumn(name = "idusuarioadministrador", referencedColumnName = "idusuario")
     private Usuario administradorEmpresa;
     
 }

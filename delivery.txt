@@ -62,7 +62,7 @@ CREATE TABLE vehiculos (
     vehiculo VARCHAR(40) NOT NULL,
     modelo VARCHAR(40) NOT NULL,
     marca VARCHAR(40) NOT NULL,
-    anio VARCHAR(4) NOT NULL,
+    anio int,
     velocidad INT NOT NULL,
     FOREIGN KEY (idRepartidor) REFERENCES usuarios(idUsuario) ON DELETE SET NULL
 );
@@ -76,7 +76,7 @@ CREATE TABLE metodopagos (
 CREATE TABLE pagos (
     idPago INT AUTO_INCREMENT PRIMARY KEY,
     idMetodoPago INT NOT NULL,
-    numeroFactura VARCHAR(50) NOT NULL UNIQUE,
+    factura VARCHAR(50) NOT NULL UNIQUE,
     totalFactura DOUBLE NOT NULL,
     FOREIGN KEY (idMetodoPago) REFERENCES metodopagos(idMetodoPago) ON DELETE CASCADE
 );
@@ -89,11 +89,11 @@ CREATE TABLE pedidos (
     idRepartidor INT NULL,
     idEstado INT,
     idPago INT NOT NULL,
-    fechaPedido TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    fechaFinal TIMESTAMP NULL,
+    fechaPedido dateTime,
+    fechaFinal dateTime NULL,
     costoEnvioTotal DOUBLE NOT NULL,
     montoTotalDeProductos DOUBLE NOT NULL,
-    FOREIGN KEY (idUsuarioQueCompra) REFERENCES usuarios(idUsuario) ON DELETE CASCADE,
+    FOREIGN KEY (idComprador) REFERENCES usuarios(idUsuario) ON DELETE CASCADE,
     FOREIGN KEY (idRepartidor) REFERENCES usuarios(idUsuario) ON DELETE SET NULL,
     FOREIGN KEY (idEmpresa) REFERENCES empresas(idEmpresa) ON DELETE CASCADE,
     FOREIGN KEY (idEstado) REFERENCES estados(idEstado),

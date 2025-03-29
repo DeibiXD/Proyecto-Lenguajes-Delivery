@@ -33,9 +33,9 @@ public class Usuario {
     @JoinColumn(name = "idestado", referencedColumnName = "idestado")
     private Estado estado;
 
-    @OneToOne
-    @JoinColumn(name = "iddireccion", referencedColumnName = "iddireccion")
-    private Direccion direccionRepartidor;
+    @OneToOne(optional = true)
+    @JoinColumn(name = "idubicacionrepartidor", referencedColumnName = "iddireccion")
+    private Direccion ubicacionRepartidor;
 
 
 }

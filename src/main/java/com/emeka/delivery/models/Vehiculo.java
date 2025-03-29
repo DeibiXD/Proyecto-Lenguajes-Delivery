@@ -25,13 +25,19 @@ public class Vehiculo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idvehiculo")
     private int idVehiculo;
+
     private String vehiculo;
+
     private String marca;
+
     private String modelo;
+
     private int anio;
+
     private int velocidad;
+    
     @OneToOne
-    @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
-    private Usuario usuarioRepartidor;
+    @JoinColumn(name = "idrepartidor", referencedColumnName = "idusuario")
+    private Usuario repartidor;
     
 }

@@ -24,7 +24,9 @@ public class Rol {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idrol")
     private int idRol;
+
     private String rol;
+    
     @OneToOne
     @JoinColumn(name = "idusuario", referencedColumnName = "idusuario")
     private Usuario usuario;

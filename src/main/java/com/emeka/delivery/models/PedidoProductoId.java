@@ -1,4 +1,5 @@
 package com.emeka.delivery.models;
+import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @Embeddable
 public class PedidoProductoId {
+    
+    @Column(name = "idpedido")  
     private int idPedido;
+
+    @Column(name = "idproducto")
     private int idProducto;
 
   

@@ -26,9 +26,13 @@ public class Producto {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "idproducto")
     private int idProducto;
+
     private String producto;
+
     private String descripcion;
+
     private double precio;
+    
     private String imagen;
 
     @OneToOne

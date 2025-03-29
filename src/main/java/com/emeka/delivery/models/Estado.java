@@ -22,5 +22,6 @@ public class Estado {
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     @Column(name = "idestado")
     private int idEstado;
+    
     private String estado;
 }
